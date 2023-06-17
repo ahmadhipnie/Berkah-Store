@@ -1,0 +1,45 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Toko_Berkah:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Toko_Berkah_jar</output-path>
+    <root id="archive" name="Toko_Berkah.jar">
+      <element id="module-output" name="Toko_Berkah" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/AbsoluteLayout.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/avalon-framework-impl-4.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/barcode.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/barcode4j-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-beanutils-1.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-beanutils-1.9.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-codec-1.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-collections-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-collections-3.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-collections4-4.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-compress-1.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-digester-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-io-2.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-javaflow-20060411.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-lang-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-logging-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/commons-math3-3.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/curvesapi-1.07.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/groovy-all-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/jasperreports-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/jasperreports-applet-5.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/jcalendar-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/log4j-api-2.17.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/miglayout-4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/OnBarcode.AndroidBarcode.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/poi-5.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/poi-ooxml-5.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/prompt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/servlet-api-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/slf4j-api-1.7.36.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/SparseBitSet-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/swingx-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/table-custom.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/TimingFramework-0.55.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/xmlbeans-5.0.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

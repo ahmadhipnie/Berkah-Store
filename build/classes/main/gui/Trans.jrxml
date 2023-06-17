@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Trans" pageWidth="226" pageHeight="160" columnWidth="216" leftMargin="5" rightMargin="5" topMargin="0" bottomMargin="0" uuid="0855bf09-5347-4575-a546-1c09b1a6277b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jual"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="3.797498335832415"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kd_trans" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.Integer"/>
+	<parameter name="bayar" class="java.lang.Integer"/>
+	<parameter name="kembalian" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT barang.`id_barang` AS barang_id_barang,
+     barang.`nama_barang` AS barang_nama_barang,
+     barang.`jumlah` AS barang_jumlah,
+     barang.`id_satuan` AS barang_id_satuan,
+     barang.`harga_jual` AS barang_harga_jual,
+     barang.`harga_beli` AS barang_harga_beli,
+     penjualan.`id_penjualan` AS penjualan_id_penjualan,
+     penjualan.`tanggal_transaksi` AS penjualan_tanggal_transaksi,
+     penjualan.`jam_transaksi` AS penjualan_jam_transaksi,
+     penjualan.`total_bayar` AS penjualan_total_bayar,
+     penjualan.`uang` AS penjualan_uang,
+     penjualan.`kembalian` AS penjualan_kembalian,
+     penjualan.`id_pengguna` AS penjualan_id_pengguna,
+     detail_penjualan.`id_penjualan` AS detail_penjualan_id_penjualan,
+     detail_penjualan.`id_barang` AS detail_penjualan_id_barang,
+     detail_penjualan.`qty` AS detail_penjualan_qty,
+     detail_penjualan.`harga_total` AS detail_penjualan_harga_total,
+     satuan.`id_satuan` AS satuan_id_satuan,
+     satuan.`satuan` AS satuan_satuan
+FROM
+     `barang` barang INNER JOIN `detail_penjualan` detail_penjualan ON barang.`id_barang` = detail_penjualan.`id_barang`
+     INNER JOIN `penjualan` penjualan ON detail_penjualan.`id_penjualan` = penjualan.`id_penjualan`
+     INNER JOIN `satuan` satuan ON barang.`id_satuan` = satuan.`id_satuan`
+WHERE penjualan.`id_penjualan`= $P{kd_trans}]]>
+	</queryString>
+	<field name="barang_id_barang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_barang"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_id_barang"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="barang_nama_barang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama_barang"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_nama_barang"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="barang_jumlah" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="jumlah"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_jumlah"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="barang_id_satuan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_satuan"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_id_satuan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="barang_harga_jual" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="harga_jual"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_harga_jual"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="barang_harga_beli" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="harga_beli"/>
+		<property name="com.jaspersoft.studio.field.label" value="barang_harga_beli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="penjualan_id_penjualan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_penjualan"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_id_penjualan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_tanggal_transaksi" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_tanggal_transaksi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_jam_transaksi" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="jam_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_jam_transaksi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_total_bayar" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total_bayar"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_total_bayar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_uang" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="uang"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_uang"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_kembalian" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="kembalian"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_kembalian"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="penjualan_id_pengguna" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_pengguna"/>
+		<property name="com.jaspersoft.studio.field.label" value="penjualan_id_pengguna"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penjualan"/>
+	</field>
+	<field name="detail_penjualan_id_penjualan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_penjualan"/>
+		<property name="com.jaspersoft.studio.field.label" value="detail_penjualan_id_penjualan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detail_penjualan"/>
+	</field>
+	<field name="detail_penjualan_id_barang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_barang"/>
+		<property name="com.jaspersoft.studio.field.label" value="detail_penjualan_id_barang"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detail_penjualan"/>
+	</field>
+	<field name="detail_penjualan_qty" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="detail_penjualan_qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detail_penjualan"/>
+	</field>
+	<field name="detail_penjualan_harga_total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="harga_total"/>
+		<property name="com.jaspersoft.studio.field.label" value="detail_penjualan_harga_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detail_penjualan"/>
+	</field>
+	<field name="satuan_id_satuan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_satuan"/>
+		<property name="com.jaspersoft.studio.field.label" value="satuan_id_satuan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="satuan"/>
+	</field>
+	<field name="satuan_satuan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="satuan"/>
+		<property name="com.jaspersoft.studio.field.label" value="satuan_satuan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="satuan"/>
+	</field>
+	<group name="barang_id_barang">
+		<groupExpression><![CDATA[$F{barang_id_barang}]]></groupExpression>
+	</group>
+	<group name="barang_nama_barang">
+		<groupExpression><![CDATA[$F{barang_nama_barang}]]></groupExpression>
+	</group>
+	<group name="barang_jumlah">
+		<groupExpression><![CDATA[$F{barang_jumlah}]]></groupExpression>
+	</group>
+	<group name="barang_id_satuan">
+		<groupExpression><![CDATA[$F{barang_id_satuan}]]></groupExpression>
+	</group>
+	<group name="barang_harga_jual">
+		<groupExpression><![CDATA[$F{barang_harga_jual}]]></groupExpression>
+	</group>
+	<group name="barang_harga_beli">
+		<groupExpression><![CDATA[$F{barang_harga_beli}]]></groupExpression>
+	</group>
+	<group name="penjualan_id_penjualan">
+		<groupExpression><![CDATA[$F{penjualan_id_penjualan}]]></groupExpression>
+	</group>
+	<group name="penjualan_tanggal_transaksi">
+		<groupExpression><![CDATA[$F{penjualan_tanggal_transaksi}]]></groupExpression>
+	</group>
+	<group name="penjualan_jam_transaksi">
+		<groupExpression><![CDATA[$F{penjualan_jam_transaksi}]]></groupExpression>
+	</group>
+	<group name="penjualan_total_bayar">
+		<groupExpression><![CDATA[$F{penjualan_total_bayar}]]></groupExpression>
+	</group>
+	<group name="penjualan_uang">
+		<groupExpression><![CDATA[$F{penjualan_uang}]]></groupExpression>
+	</group>
+	<group name="penjualan_kembalian">
+		<groupExpression><![CDATA[$F{penjualan_kembalian}]]></groupExpression>
+	</group>
+	<group name="penjualan_id_pengguna">
+		<groupExpression><![CDATA[$F{penjualan_id_pengguna}]]></groupExpression>
+	</group>
+	<group name="detail_penjualan_id_penjualan">
+		<groupExpression><![CDATA[$F{detail_penjualan_id_penjualan}]]></groupExpression>
+	</group>
+	<group name="detail_penjualan_id_barang">
+		<groupExpression><![CDATA[$F{detail_penjualan_id_barang}]]></groupExpression>
+	</group>
+	<group name="detail_penjualan_qty">
+		<groupExpression><![CDATA[$F{detail_penjualan_qty}]]></groupExpression>
+	</group>
+	<group name="detail_penjualan_harga_total">
+		<groupExpression><![CDATA[$F{detail_penjualan_harga_total}]]></groupExpression>
+	</group>
+	<group name="satuan_id_satuan">
+		<groupExpression><![CDATA[$F{satuan_id_satuan}]]></groupExpression>
+	</group>
+	<group name="satuan_satuan">
+		<groupExpression><![CDATA[$F{satuan_satuan}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="197" height="30" uuid="4971104c-40de-4029-b1fb-a3a53759bf85"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Berkah Store]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="30" height="13" uuid="3c5a74c7-1c13-4ab5-a5cd-ad14d9230502">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<text><![CDATA[Nota :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="30" width="68" height="12" uuid="05f3f5a0-eb60-4ff6-9ae6-681ff7beaa95">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="88d221bc-27da-40e6-beba-96b0d1b94ac4"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_id_penjualan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="30" width="42" height="12" uuid="3eec5596-27f7-4439-8aca-625395e4f280">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a4d414d-7192-4f56-8295-964eff92db04"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_id_pengguna}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="42" width="200" height="15" printWhenGroupChanges="barang_id_barang" uuid="fa4d1549-10d1-4cb8-8741-3a48b3f257f0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="145" y="30" width="52" height="12" uuid="a574136c-849f-4455-a199-4300a1af5a0a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_tanggal_transaksi}]]></textFieldExpression>
+				<patternExpression><![CDATA["dd/MM/yyyy"]]></patternExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="53" width="103" height="15" uuid="4e28dadb-9427-4582-9228-9d201301ae36">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18c2a634-e6d8-425b-b2c6-d8a416ad4758"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="53" width="22" height="15" uuid="10bec834-3818-413e-825e-97ffe711fe01">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d531619d-7337-4d89-a008-7a05d24c7de1"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="53" width="30" height="15" uuid="6cbd7b2a-13e0-4571-92ab-f5322ac06aa6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1fd72e-e9a8-4741-b433-9e3013b474ad"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="53" width="40" height="15" uuid="7de0c90d-6a7b-4117-82c1-526fc920174e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a328055-4167-4648-8016-3278943f4480"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="68" width="200" height="13" uuid="eca2b016-d878-42ed-964d-a9eae0e0cf5c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+					<paragraph lineSpacingSize="0.0"/>
+				</textElement>
+				<text><![CDATA[- - - - - - - - - - - - - - - - - - - - - - - - - - -]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="1" y="0" width="98" height="11" uuid="bde694a6-7805-401e-b6c5-5aacc5608fef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18c2a634-e6d8-425b-b2c6-d8a416ad4758"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Monospaced" size="7"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barang_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="24" height="11" uuid="30555abc-e7f4-4357-9f4a-cc606e9efc88">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d531619d-7337-4d89-a008-7a05d24c7de1"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="7"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detail_penjualan_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="0" width="30" height="11" uuid="e84388c1-1763-4fa3-9dca-5848e2bdaefa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1fd72e-e9a8-4741-b433-9e3013b474ad"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="7"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barang_harga_jual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="40" height="11" uuid="5d42773a-8730-4540-ad25-e59e013372af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a328055-4167-4648-8016-3278943f4480"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="7"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detail_penjualan_harga_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="197" height="20" uuid="1d5ef46b-0efe-4e5c-b9da-9a72f17ac4a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="8"/>
+				</textElement>
+				<text><![CDATA[Terima kasih telah membeli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="200" height="15" uuid="78d5a968-89cc-4994-9ef5-89f82c05bf65">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+					<paragraph lineSpacingSize="0.0"/>
+				</textElement>
+				<text><![CDATA[- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="10" width="50" height="10" uuid="294bad62-6a67-4777-81ec-f9ffc6662b78">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="21" width="50" height="10" uuid="c4613d30-be23-4152-9e34-6cc7d10d1bfb">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jual"/>
+					<property name="com.jaspersoft.studio.unit." value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bayar	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="32" width="50" height="10" uuid="221f559c-78de-4ed9-a0f1-f8bb944fbcb1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembali	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="10" width="62" height="10" uuid="e1b7e44a-c562-40d0-8523-d95de4e37b3b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_total_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="21" width="62" height="10" uuid="ca792b7f-9ce8-4ec2-9b39-46222d370b95">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_uang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="32" width="62" height="10" uuid="d3841fbf-3779-42f8-801a-571e5e8f6bdf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penjualan_kembalian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="200" height="15" uuid="b95a35c2-8cc1-44e9-9cc0-6945f6c4521b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Monospaced" size="7" isBold="true"/>
+					<paragraph lineSpacingSize="0.0"/>
+				</textElement>
+				<text><![CDATA[- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
